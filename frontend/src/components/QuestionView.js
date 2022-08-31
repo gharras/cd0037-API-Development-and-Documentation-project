@@ -21,10 +21,12 @@ class QuestionView extends Component {
   }
 
   getQuestions = () => {
+    console.log('enter getQuestion methods');
     $.ajax({
       url: `/questions?page=${this.state.page}`, //TODO: update request URL
       type: 'GET',
       success: (result) => {
+        console.log('result: ' + result.categories[1])
         this.setState({
           questions: result.questions,
           totalQuestions: result.total_questions,
@@ -38,6 +40,14 @@ class QuestionView extends Component {
         return;
       },
     });
+    // console.log(this.state.categories[1]);
+    // console.log(this.state.categories[2]);
+    // console.log(this.state.categories[3]);
+    // console.log(this.state.categories[4]);
+    // console.log(this.state.categories[5]);
+    // console.log(this.state.categories[6]);
+
+    console.log('leave getQuestion methods');
   };
 
   selectPage(num) {
