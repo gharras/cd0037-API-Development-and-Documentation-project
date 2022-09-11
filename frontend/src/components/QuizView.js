@@ -21,7 +21,7 @@ class QuizView extends Component {
 
   componentDidMount() {
     $.ajax({
-      url: `/categories`, //TODO: update request URL
+      url: `http://127.0.0.1:5000/categories`, //TODO: update request URL
       type: 'GET',
       success: (result) => {
         console.log('enter result: ' + result.categories);
